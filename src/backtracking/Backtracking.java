@@ -1,4 +1,4 @@
-package src.backtraking;
+package src.backtracking;
 
 import src.Procesador;
 import src.Tarea;
@@ -6,13 +6,13 @@ import src.Tarea;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-public class Backtraking {
+public class Backtracking {
 
     private Estado mejorSolucion;
 
     private final int VALOR_INICIAL = -1;
 
-    public Backtraking() {
+    public Backtracking() {
         this.mejorSolucion = new Estado(-1);
     }
 
@@ -20,7 +20,7 @@ public class Backtraking {
         return mejorSolucion;
     }
 
-    public Estado backtraking(Integer tiempo, LinkedList<Tarea> criticas, LinkedList<Tarea> noCriticas, LinkedList<Procesador> listProd) {
+    public Estado backtracking(Integer tiempo, LinkedList<Tarea> criticas, LinkedList<Tarea> noCriticas, LinkedList<Procesador> listProd) {
         Estado actual = new Estado(0);
         if ((criticas.size() / 2) > listProd.size()) return actual;
 

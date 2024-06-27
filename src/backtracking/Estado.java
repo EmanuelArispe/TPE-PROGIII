@@ -1,4 +1,4 @@
-package src.backtraking;
+package src.backtracking;
 
 import src.Procesador;
 import src.Tarea;

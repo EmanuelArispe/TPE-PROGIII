@@ -132,7 +132,7 @@ public class Procesador implements Comparable<Procesador> {
     }
 
     @Override
-    public int compareTo(@NotNull Procesador o) {
+    public int compareTo( @NotNull Procesador o) {
         return getTiempoProcesamiento().compareTo(o.getTiempoProcesamiento());
     }
 }

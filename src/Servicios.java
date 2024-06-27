@@ -1,9 +1,7 @@
 package src;
 
-import org.jetbrains.annotations.NotNull;
-import src.Tarea;
-import src.backtraking.Backtraking;
-import src.backtraking.Estado;
+import src.backtracking.Backtracking;
+import src.backtracking.Estado;
 import src.greedy.Greedy;
 import src.utils.CSVReader;
 
@@ -101,7 +99,7 @@ public class Servicios {
 
 
     public Estado servicioBacktraking(int tiempo) {
-        return new Backtraking().backtraking(tiempo, getTareasCriticas(), getTareasNoCriticas(), getAlmacenProcesadores());
+        return new Backtracking().backtracking(tiempo, getTareasCriticas(), getTareasNoCriticas(), getAlmacenProcesadores());
     }
 
     public Estado servicioGreedy(int tiempo) {

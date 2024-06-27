@@ -2,7 +2,7 @@ package src.greedy;
 
 import src.Procesador;
 import src.Tarea;
-import src.backtraking.Estado;
+import src.backtracking.Estado;
 
 import java.util.Collections;
 import java.util.Iterator;
