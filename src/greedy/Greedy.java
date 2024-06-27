@@ -57,7 +57,7 @@ public class Greedy {
         Procesador prodFactible = null;
         for (Procesador prod : listProd) {
             getSolucionFinal().sumarEstado();
-            if ((prodFactible == null) || (cumpleCondicion(prod, nextTarea, tiempo) && (prod.compareTo(prodFactible) < 0))) {
+            if ((cumpleCondicion(prod, nextTarea, tiempo) && ((prodFactible == null) || (prod.compareTo(prodFactible) < 0)))) {
                 prodFactible = prod;
             }
         }
@@ -73,7 +73,7 @@ public class Greedy {
     }
 
     private boolean excedeTiempoSinRefrigeracion(Procesador prod, Tarea tarea, Integer tiempo) {
-        return !prod.getRefrigerado() && tarea.getTiempo() > tiempo;
+        return !prod.getRefrigerado() && ((tarea.getTiempo() + prod.getTiempoProcesamiento()) > tiempo);
     }
 
     private Integer getMaxTiempoProcesamiento() {

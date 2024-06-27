@@ -24,8 +24,10 @@ public class Backtracking {
         Estado actual = new Estado(0);
         if ((criticas.size() / 2) > listProd.size()) return actual;
 
-        criticas.addAll(noCriticas);
-        back(tiempo, actual, criticas, listProd);
+        LinkedList<Tarea> tareas = new LinkedList<>();
+        tareas.addAll(criticas);
+        tareas.addAll(noCriticas);
+        back(tiempo, actual, tareas, listProd);
         getMejorSolucion().setCantEstado(actual.getCantEstado());
         getMejorSolucion().setCantEstadoFinales(actual.getCantEstadoFinales());
         return getMejorSolucion();
@@ -61,7 +63,8 @@ public class Backtracking {
     }
 
     private boolean excedeTiempoSinRefrigeracion(Procesador prod, Tarea tarea, Integer tiempo) {
-        return !prod.getRefrigerado() && tarea.getTiempo() > tiempo;
+
+        return !prod.getRefrigerado() && ((tarea.getTiempo() + prod.getTiempoProcesamiento()) > tiempo);
     }
 
     private boolean esMejorSolucion(Estado actual) {

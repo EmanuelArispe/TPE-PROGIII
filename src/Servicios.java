@@ -61,9 +61,9 @@ public class Servicios {
     *tienen una complejidad constante.
     */
     public Tarea servicio1(String ID) {
-        return new Tarea(getAlmacenTareas().get(ID).getId(), getAlmacenTareas().get(ID).getNombre(),
+        return (getAlmacenTareas().get(ID) != null) ? new Tarea(getAlmacenTareas().get(ID).getId(), getAlmacenTareas().get(ID).getNombre(),
                 getAlmacenTareas().get(ID).getTiempo(), getAlmacenTareas().get(ID).getCritica(),
-                getAlmacenTareas().get(ID).getPrioridad());
+                getAlmacenTareas().get(ID).getPrioridad()) : new Tarea();
     }
 
     /*
