@@ -14,9 +14,6 @@ public class Tarea implements Comparable<Tarea> {
         this.critica = critica;
         this.prioridad = prioridad;
     }
-    public Tarea(){
-        this.id = "-1";
-    }
 
     public String getId() {
         return id;
@@ -44,11 +41,11 @@ public class Tarea implements Comparable<Tarea> {
 
     @Override
     public String toString() {
-        return (!this.id.equals("-1")) ?  " Id = '" + getId() + '\'' +
+        return  " Id = '" + getId() + '\'' +
                 ", Nombre = '" + getNombre() + '\'' +
                 ", Tiempo = " + getTiempo() +
                 ", Critica = " + getCritica() +
-                ", Prioridad = " + getPrioridad() : " Tarea inexistente ";
+                ", Prioridad = " + getPrioridad();
     }
 
     @Override

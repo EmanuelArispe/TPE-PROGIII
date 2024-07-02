@@ -6,7 +6,8 @@ public class Main {
         Servicios servicios = new Servicios("./src/datasets/Procesadores.csv", "./src/datasets/Tareas.csv");
 
         System.out.println("Muestro tarea segun ID: ");
-        System.out.println(servicios.servicio1("T8").toString());
+        String valor = (servicios.servicio1("T50") != null) ? servicios.servicio1("T8").toString() :"No existe la Tarea seleccionada";
+        System.out.println(valor);
         System.out.println();
 
         System.out.println("Servicios con prioridad entre 50 y 100 ");
@@ -18,7 +19,7 @@ public class Main {
 
 
         System.out.println("\n" + "Backtraking");
-        System.out.println(servicios.servicioBacktraking(10).toString());
+        System.out.println(servicios.servicioBacktraking(100).toString());
 
         System.out.println("\n" + "Greedy");
         System.out.println((servicios.servicioGreedy(10).toString()));
